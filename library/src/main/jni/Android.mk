@@ -12,17 +12,19 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := ffts
-LOCAL_C_INCLUDES := src/main/jni/include src/main/jni/src
-LOCAL_CFLAGS := -DHAVE_DECL_MEMALIGN -std=c99 \
+LOCAL_C_INCLUDES := jni/include jni/src
+LOCAL_CFLAGS := -DHAVE_DECL_MEMALIGN -DHAVE_STDLIB_H -std=c99 \
 	-Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 LOCAL_SRC_FILES := \
 	ffts_jni.c \
 	src/ffts.c \
+	src/ffts_chirp_z.c \
 	src/ffts_nd.c \
 	src/ffts_real.c \
 	src/ffts_real_nd.c \
-	src/ffts_small.c \
-	src/patterns.c
+	src/ffts_static.c \
+	src/ffts_transpose.c \
+	src/ffts_trig.c
 LOCAL_LDLIBS := -llog 
 
 ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
@@ -38,17 +40,19 @@ endif
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := ffts
-LOCAL_C_INCLUDES := src/main/jni/include src/main/jni/src
-LOCAL_CFLAGS := -DHAVE_DECL_MEMALIGN -std=c99 \
+LOCAL_C_INCLUDES := jni/include jni/src
+LOCAL_CFLAGS := -DHAVE_DECL_MEMALIGN -DHAVE_STDLIB_H -std=c99 \
 	-Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 LOCAL_SRC_FILES := \
 	ffts_jni.c \
 	src/ffts.c \
+	src/ffts_chirp_z.c \
 	src/ffts_nd.c \
 	src/ffts_real.c \
 	src/ffts_real_nd.c \
-	src/ffts_small.c \
-	src/patterns.c
+	src/ffts_static.c \
+	src/ffts_transpose.c \
+	src/ffts_trig.c
 LOCAL_LDLIBS := -llog 
 
 ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
@@ -65,17 +69,19 @@ endif
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := ffts
-LOCAL_C_INCLUDES := src/main/jni/include src/main/jni/src
-LOCAL_CFLAGS := -DHAVE_DECL_MEMALIGN -std=c99 \
+LOCAL_C_INCLUDES := jni/include jni/src
+LOCAL_CFLAGS := -DHAVE_DECL_MEMALIGN -DHAVE_STDLIB_H -std=c99 \
 	-Wno-pointer-to-int-cast -Wno-int-to-pointer-cast
 LOCAL_SRC_FILES := \
 	ffts_jni.c \
 	src/ffts.c \
+	src/ffts_chirp_z.c \
 	src/ffts_nd.c \
 	src/ffts_real.c \
 	src/ffts_real_nd.c \
-	src/ffts_small.c \
-	src/patterns.c
+	src/ffts_static.c \
+	src/ffts_transpose.c \
+	src/ffts_trig.c
 LOCAL_LDLIBS := -llog 
 
 ifeq ($(TARGET_ARCH_ABI),x86_64)
